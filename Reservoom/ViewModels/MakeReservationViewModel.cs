@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Reservoom.Commands;
+using Reservoom.Models;
+using System;
 using System.Windows.Input;
 
 namespace Reservoom.ViewModels
@@ -8,8 +10,8 @@ namespace Reservoom.ViewModels
         private string _username;
         private int _floorNumber;
         private int _roomNumber;
-        private DateTime _startDate;
-        private DateTime _endDate;
+        private DateTime _startDate = DateTime.Today;
+        private DateTime _endDate = DateTime.Today.AddDays(1);
 
         public string Username
         {
@@ -64,9 +66,10 @@ namespace Reservoom.ViewModels
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
 
-        public MakeReservationViewModel()
+        public MakeReservationViewModel(Hotel hotel)
         {
-
+            SubmitCommand = new MakeReservationCommand(this, hotel);
+            CancelCommand = new CancelMakeReservationCommand();
         }
     }
 }

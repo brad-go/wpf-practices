@@ -2,7 +2,7 @@
 
 namespace Reservoom.Models
 {
-    class Hotel
+    public class Hotel
     {
         private readonly ReservationBook _reservationBook;
 
