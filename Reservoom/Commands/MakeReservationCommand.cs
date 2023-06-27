@@ -32,8 +32,7 @@ namespace Reservoom.Commands
                 new RoomID(_makeReservationViewModel.FloorNumber, _makeReservationViewModel.RoomNumber),
                 _makeReservationViewModel.Username,
                 _makeReservationViewModel.StartDate,
-                _makeReservationViewModel.EndDate
-                );
+                _makeReservationViewModel.EndDate);
 
             try
             {
